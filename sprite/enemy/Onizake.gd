@@ -29,7 +29,9 @@ func _physics_process(delta):
 func _on_radius_body_entered(body):
 	if body.name == "Player":
 		set_process(true)
+		$radius/AudioStreamPlayer2D.playing = true
 		
 func _on_radius_body_exited(body):
 	if body.name == "Player":
 		set_process(false)
+		$radius/AudioStreamPlayer2D.playing = false

@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://scenes/globals.gd"
+PlayerPos="*res://sprite/player/playerPos.gd"
 
 [display]
 

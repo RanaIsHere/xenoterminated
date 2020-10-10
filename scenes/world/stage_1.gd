@@ -7,15 +7,29 @@ func _process(_delta):
 	if indexTile == -1:
 		Globals.playerHealth = 0
 	
-	#print(indexTile)
+	if indexTile == 3:
+		breakTile(tileMap)
+	
+	if indexTile == 4:
+		Globals.playerSpeed = 150
+	else:
+		Globals.playerSpeed = 200
+	
+	print(indexTile)
+
+func breakTile(var tileMap):
+	yield(get_tree().create_timer(0.2), "timeout")
+	
+	$theCliffsground.set_cellv(tileMap, -1)	
 
 func _physics_process(delta):
-	if get_node("Neverao"):
-		$Neverao.look_at(get_node("Player").position)
-		$Neverao/AnimatedSprite/left.look_at(get_node("Player").position)
-		$Neverao/AnimatedSprite/right.look_at(get_node("Player").position)
+	#if  $Neverao != null:
+	#	$Neverao.look_at(get_node("Player").position)
+	#	$Neverao/AnimatedSprite/left.look_at(get_node("Player").position)
+	#	$Neverao/AnimatedSprite/right.look_at(get_node("Player").position)
 	
-	if get_node("Neverao2"):
-		$Neverao2.look_at(get_node("Player").position)
-		$Neverao2/AnimatedSprite/left.look_at(get_node("Player").position)
-		$Neverao2/AnimatedSprite/right.look_at(get_node("Player").position)
+	#if $Neverao2 != null:
+	#	$Neverao2.look_at(get_node("Player").position)
+	#	$Neverao2/AnimatedSprite/left.look_at(get_node("Player").position)
+	#	$Neverao2/AnimatedSprite/right.look_at(get_node("Player").position)
+	pass

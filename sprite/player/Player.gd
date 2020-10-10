@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 var allowShot = 0
 
-var playerSpeed = 200
+const playerSpeed = 200
 
+const MAXBATT = 20
 const MAXAMMO = 90
 
 var velocity = Vector2.ZERO
@@ -17,12 +18,15 @@ func _ready():
 	playerAnimated.connect("animation_finished", self, "idle")
 	
 	Globals.playerAmmo = MAXAMMO
+	Globals.playerBattery = MAXBATT
+	Globals.playerSpeed = playerSpeed
 
 func observe():
 	var s_a = scanArea.instance()
 	
 	owner.add_child(s_a)
 	s_a.translate(get_global_mouse_position())
+	Globals.playerBattery -= 1
 
 func shoot():
 	var b_t = bullet.instance()
@@ -64,20 +68,24 @@ func get_input():
 		velocity.x -= 1
 		walk()
 	if velocity == Vector2.ZERO:
-		if Input.is_action_just_pressed("shoot") and allowShot == 0 and Globals.playerAmmo != 0:
-			shoot()
-			
-		if Input.is_action_just_pressed("observe"):
-			observe()
+		if Globals.researchPoint == 0:
+			if Input.is_action_just_pressed("shoot") and allowShot == 0 and Globals.playerAmmo != 0:
+				shoot()
+		
+		if Globals.soldierPoint == 0:
+			if Input.is_action_just_pressed("observe"):
+				observe()
 			
 
-	velocity = velocity.normalized() * playerSpeed
+	velocity = velocity.normalized() * Globals.playerSpeed
 
 	velocity = move_and_slide(velocity, velocity, false, 4, PI / 4, false)
 
 func _process(_delta):
 	if Globals.playerAmmo < 0:
 		Globals.playerAmmo = 0
+	if Globals.playerBattery < 0:
+		Globals.playerBattery = 0
 
 func _physics_process(_delta):
 	if Globals.allowInput == true:
