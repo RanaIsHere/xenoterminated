@@ -1,0 +1,289 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://tiles/world/stage_1/background/space_front.png" type="Texture" id=1]
+[ext_resource path="res://font/Silver.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://tiles/world/stage_1/background/planet.png" type="Texture" id=3]
+[ext_resource path="res://tiles/world/stage_1/background/ship.png" type="Texture" id=4]
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=5]
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 512, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 19
+atlas = ExtResource( 4 )
+region = Rect2( 640, 0, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_size = 1
+outline_color = Color( 0.501961, 0.203922, 0.603922, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space_front" type="Sprite" parent="."]
+position = Vector2( 514.653, 253.275 )
+scale = Vector2( 1.28363, 1.28363 )
+z_index = -4
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="planet" type="Sprite" parent="."]
+position = Vector2( 861.082, 277.984 )
+scale = Vector2( 0.308866, 0.308866 )
+texture = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 702.487, 287.434 )
+frames = SubResource( 8 )
+frame = 2
+playing = true
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -478.238
+margin_top = 27.5176
+margin_right = 77.7615
+margin_bottom = 169.518
+custom_fonts/font = SubResource( 1 )
+text = "XENOTERMINATED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionControl" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -198.633
+margin_top = 11.3137
+margin_right = -7.63318
+margin_bottom = 88.3137
+custom_fonts/font = SubResource( 9 )
+text = "Version: 0.2.0
+Made by Rana Rosihan"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.5637
+margin_top = -27.5
+margin_right = 203.564
+margin_bottom = 27.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="Start"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.5
+margin_top = -18.5
+margin_right = 36.5
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 9 )
+text = "Start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instruction" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.5637
+margin_top = 50.5
+margin_right = 203.564
+margin_bottom = 105.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instructionLabel" type="Label" parent="Instruction"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -18.5
+margin_right = 53.0
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 9 )
+text = "Instruction"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.5637
+margin_top = 126.905
+margin_right = 203.564
+margin_bottom = 181.905
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exitLabel" type="Label" parent="Exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -18.5
+margin_right = 53.0
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 9 )
+text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Panel" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -202.0
+margin_top = -81.0
+margin_right = -31.0
+margin_bottom = -26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="backLabel" type="Label" parent="Back"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -18.5
+margin_right = 53.0
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 9 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/transition = SubResource( 10 )
+
+[node name="InstructionText" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -477.936
+margin_top = -185.095
+margin_right = -367.936
+margin_bottom = -108.095
+custom_fonts/font = SubResource( 9 )
+text = "How to Play:
+At first, you have two choice. Kill or Observe the species on the planet, whether hostile or not.
+When you've already killed, then you cannot observe anymore.
+When you've already observed, then you cannot kill anymore.
+- Mouse Left Click - Observe (Move your mouse to aim)
+- Keyboard Button 'E' - Shoot (Kill) (Move your mouse to aim)
+You cannot shoot/observe when you are moving/walking!
+There are two endings to this game, complete all stages successfully by killing/observing all creature!
+In this planet, there are hostile species and passsive species. Passive usually does not damage you,
+although hostile will hunt you down when it sees you.
+Have fun playing!"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="Start" to="." method="_on_Start_gui_input"]
+[connection signal="gui_input" from="Instruction" to="." method="_on_Instruction_gui_input"]
+[connection signal="gui_input" from="Exit" to="." method="_on_Exit_gui_input"]
+[connection signal="gui_input" from="Back" to="." method="_on_Back_gui_input"]

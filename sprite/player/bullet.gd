@@ -14,7 +14,9 @@ func _on_bullet_body_entered(body):
 	if body.is_in_group("invincible"):
 		queue_free()
 	if body.is_in_group("enemies"):
-		body.queue_free()
+		body.health -= 1
 		queue_free()
 		
-		Globals.soldierPoint += 1
+		if body.health == 0 or body.health < 0:
+			Globals.soldierPoint += 1
+			body.queue_free()

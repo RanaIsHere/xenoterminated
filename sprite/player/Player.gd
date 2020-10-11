@@ -4,8 +4,8 @@ var allowShot = 0
 
 const playerSpeed = 200
 
-const MAXBATT = 20
-const MAXAMMO = 90
+export var MAXBATT = 20
+export var MAXAMMO = 90
 
 var velocity = Vector2.ZERO
 
@@ -84,12 +84,15 @@ func get_input():
 func _process(_delta):
 	if Globals.playerAmmo < 0:
 		Globals.playerAmmo = 0
+	if Globals.playerAmmo > MAXAMMO:
+		Globals.playerAmmo = MAXAMMO
 	if Globals.playerBattery < 0:
 		Globals.playerBattery = 0
 
 func _physics_process(_delta):
 	if Globals.allowInput == true:
 		get_input()
-
+	
+	
 	look_at(get_global_mouse_position())
 	$gun.look_at(get_global_mouse_position())

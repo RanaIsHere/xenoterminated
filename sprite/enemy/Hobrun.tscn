@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprite/enemy/Hobrun.png" type="Texture" id=1]
+[ext_resource path="res://sprite/enemy/Hobrun.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 18.7002
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 316.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 19.0269
+
+[node name="Hobrun" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="HobrunArea" type="Area2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HobrunArea"]
+rotation = -1.5708
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HobrunArea"]
+visible = false
+shape = SubResource( 6 )
+
+[node name="detectionRadius" type="Area2D" parent="HobrunArea"]
+
+[node name="radiusShape" type="CollisionShape2D" parent="HobrunArea/detectionRadius"]
+visible = false
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 8 )
+[connection signal="body_entered" from="HobrunArea" to="." method="_on_Hobrun_body_entered"]
+[connection signal="body_exited" from="HobrunArea" to="." method="_on_Hobrun_body_exited"]
+[connection signal="body_entered" from="HobrunArea/detectionRadius" to="." method="_on_detectionRadius_body_entered"]

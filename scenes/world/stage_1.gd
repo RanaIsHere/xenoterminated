@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	OS.set_window_title("Xenoterminated - Alpha Cliff")
+
 func _process(_delta):	
 	var tileMap = $theCliffsground.world_to_map($Player.position)
 	var indexTile = $theCliffsground.get_cellv(Vector2(tileMap.x, tileMap.y))
@@ -15,7 +18,7 @@ func _process(_delta):
 	else:
 		Globals.playerSpeed = 200
 	
-	print(indexTile)
+	#print(indexTile)
 
 func breakTile(var tileMap):
 	yield(get_tree().create_timer(0.2), "timeout")

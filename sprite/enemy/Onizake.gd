@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
-var timeLoop : float = 0.0
-var timeMax : float = 10.0
+export var timeLoop : float = 0.0
+export var timeMax : float = 10.0 # First
 
-var timeLoop2 : float = 0.0
-var timeMax2 : float = 10.0
+export var timeLoop2 : float = 0.0
+export var timeMax2 : float = 10.0 # Pong Second
+
+export var health = 2
 
 func _ready():
 	set_process(false)
