@@ -1,7 +1,7 @@
 <html>
     
 <body>
-    <div style="background-color: pink; color: white;"> 
+    <div style="background-color: pink; color: black; font-weight: bolder"> 
         <h2> Game: </h2>
         <p> From Earth, you ascended into the heavens with advanced technology. They realized that the other planets are filled with similar life to Earth, except one. A different         planet, filled with life, biology, physics unfamiliar to our own. You are just a high-ranked soldier in charge of the troops, but you were discharged and demoted to a mere         cleanser to cleanse a Different Planet of its life and change it to something familiar. </p>
     </div>
