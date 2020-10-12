@@ -18,6 +18,7 @@
                 <li> Sounds made with BFXR and Audacity </li>
                 <li> Arts made with Piskel and Aseprite </li>
                 <li> Game made with Godot </li>
+                <li> Font Silver is made by Poppy Works </li>
                 <li> Made by Rana Rosihan/SirRana/RanaIsHere</li>
             </ul>
         </div>
