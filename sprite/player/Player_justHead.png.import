@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/projectileWater.png-d57c24869af8fb1fe9f59c7001e29828.s3tc.stex"
-path.etc2="res://.import/projectileWater.png-d57c24869af8fb1fe9f59c7001e29828.etc2.stex"
+path.s3tc="res://.import/Player_justHead.png-e6f9b576b76c8eb04f9a619c78320bfe.s3tc.stex"
+path.etc2="res://.import/Player_justHead.png-e6f9b576b76c8eb04f9a619c78320bfe.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprite/enemy/projectileWater.png"
-dest_files=[ "res://.import/projectileWater.png-d57c24869af8fb1fe9f59c7001e29828.s3tc.stex", "res://.import/projectileWater.png-d57c24869af8fb1fe9f59c7001e29828.etc2.stex" ]
+source_file="res://sprite/player/Player_justHead.png"
+dest_files=[ "res://.import/Player_justHead.png-e6f9b576b76c8eb04f9a619c78320bfe.s3tc.stex", "res://.import/Player_justHead.png-e6f9b576b76c8eb04f9a619c78320bfe.etc2.stex" ]
 
 [params]
 
@@ -22,8 +22,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=1
 process/fix_alpha_border=true

@@ -17,9 +17,13 @@ export (PackedScene) var scanArea = preload("res://sprite/player/ScanArea.tscn")
 func _ready():
 	playerAnimated.connect("animation_finished", self, "idle")
 	
+	Globals.playerHealth = 100
 	Globals.playerAmmo = MAXAMMO
 	Globals.playerBattery = MAXBATT
 	Globals.playerSpeed = playerSpeed
+	
+	Globals.researchPoint = 0
+	Globals.soldierPoint = 0
 
 func observe():
 	var s_a = scanArea.instance()

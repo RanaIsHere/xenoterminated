@@ -28,7 +28,7 @@ func shoot():
 	
 	$AnimatedSprite/AudioStreamPlayer2D.playing = true
 	
-func _process(delta):
+func _process(_delta):
 	#oneShot = 0
 	
 	#look_at(get_node("Player").position)

@@ -6,45 +6,45 @@
 [ext_resource path="res://tiles/world/stage_1/background/ship.png" type="Texture" id=4]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=5]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 256, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 384, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 512, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 flags = 19
 atlas = ExtResource( 4 )
 region = Rect2( 640, 0, 128, 128 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 12.0
 } ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=8]
 size = 128
 outline_size = 1
 outline_color = Color( 0.501961, 0.203922, 0.603922, 1 )
@@ -93,8 +93,8 @@ texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 702.487, 287.434 )
-frames = SubResource( 8 )
-frame = 2
+frames = SubResource( 7 )
+frame = 4
 playing = true
 
 [node name="title" type="Label" parent="."]
@@ -104,7 +104,7 @@ margin_left = -478.238
 margin_top = 27.5176
 margin_right = 77.7615
 margin_bottom = 169.518
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "XENOTERMINATED"
 align = 1
 valign = 1
@@ -244,7 +244,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tiles/world/stage_1/background/shot_scene.png" type="Texture" id=1]
+
+[node name="trans" type="Sprite3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65748, 0.75224 )
+modulate = Color( 0, 0, 0, 1 )
+opacity = 0.0
+texture = ExtResource( 1 )

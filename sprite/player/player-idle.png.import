@@ -2,24 +2,26 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.stex"
+path.s3tc="res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.s3tc.stex"
+path.etc2="res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprite/player/player-idle.png"
-dest_files=[ "res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.stex" ]
+dest_files=[ "res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.s3tc.stex", "res://.import/player-idle.png-cff8f4ec6445d848c88b8d1bf824eed1.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
@@ -30,5 +32,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://sprite/player/Player_withoutHead.png" type="Texture" id=1]
+[ext_resource path="res://tiles/world/stage_1/background/shot_scene.png" type="Texture" id=2]
+[ext_resource path="res://sprite/player/Player_justHead.png" type="Texture" id=3]
+[ext_resource path="res://scenes/deathScene_1.gd" type="Script" id=4]
+[ext_resource path="res://sprite/enemy/projectileWater.png" type="Texture" id=5]
+[ext_resource path="res://sounds/deathScream.wav" type="AudioStream" id=6]
+[ext_resource path="res://trans.tscn" type="PackedScene" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.229542, 0.233757, 0.113204 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.194239, 0.0807348, 0.245972 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 4.44614, 0.146487, 1 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 1
+background_color = Color( 0.792157, 0.286275, 0.631373, 1 )
+glow_blend_mode = 0
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.256964, 0.106374, 0.0429369 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "deathTransition_2"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("trans:opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="deathScene_1" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752354, 1.5231 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12666, 0 )
+texture = ExtResource( 2 )
+
+[node name="trans" parent="." instance=ExtResource( 7 )]
+
+[node name="body" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655464, 0.154941 )
+
+[node name="Sprite3D" type="Sprite3D" parent="body"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.261889, 0 )
+shape = SubResource( 1 )
+
+[node name="head" type="RigidBody" parent="body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.800184, -0.154941 )
+axis_lock_linear_y = true
+
+[node name="Sprite3D" type="Sprite3D" parent="body/head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112029, 0.805726, 0.163425 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="body/head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984467, 0 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="body/head"]
+stream = ExtResource( 6 )
+unit_db = 6.0
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0677254, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="Bullet" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.165718, 0.396266 )
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+linear_velocity = Vector3( 0.85, 0, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Bullet"]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -1.7474, 0.946178, -0.269808 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Bullet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73859, 0.954767, -0.245107 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/deathTransition_2 = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

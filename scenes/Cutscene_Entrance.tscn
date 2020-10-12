@@ -116,7 +116,7 @@ texture = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86154, 0 )
 opacity = 0.842105
 frames = SubResource( 7 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -11,7 +11,7 @@ export var health = 2
 func _ready():
 	set_process(false)
 	
-func _process(delta):
+func _process(_delta):
 	Globals.playerHealth -= 0.1
 	
 func _physics_process(delta):
@@ -32,6 +32,7 @@ func _on_radius_body_entered(body):
 	if body.name == "Player":
 		set_process(true)
 		$radius/AudioStreamPlayer2D.playing = true
+		Globals.deathType = "trampled"
 		
 func _on_radius_body_exited(body):
 	if body.name == "Player":

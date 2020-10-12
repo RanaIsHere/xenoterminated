@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ExplosionMateriall.tres" type="Material" id=1]
+
+[node name="DeathExplosion" type="Particles2D"]
+position = Vector2( -784.601, 43.8255 )
+z_index = 6
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = ExtResource( 1 )
