@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/planet.png-caa11eed0d43c9c7ccdcc4bffdb0c06c.s3tc.stex"
-path.etc2="res://.import/planet.png-caa11eed0d43c9c7ccdcc4bffdb0c06c.etc2.stex"
+path.s3tc="res://.import/planet-export.png-dfffa2401695d8026f861211baca16d5.s3tc.stex"
+path.etc2="res://.import/planet-export.png-dfffa2401695d8026f861211baca16d5.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://tiles/world/stage_1/background/planet.png"
-dest_files=[ "res://.import/planet.png-caa11eed0d43c9c7ccdcc4bffdb0c06c.s3tc.stex", "res://.import/planet.png-caa11eed0d43c9c7ccdcc4bffdb0c06c.etc2.stex" ]
+source_file="res://tiles/world/stage_1/background/planet-export.png"
+dest_files=[ "res://.import/planet-export.png-dfffa2401695d8026f861211baca16d5.s3tc.stex", "res://.import/planet-export.png-dfffa2401695d8026f861211baca16d5.etc2.stex" ]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=1
+compress/normal_map=0
 flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

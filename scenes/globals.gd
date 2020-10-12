@@ -2,11 +2,15 @@ extends Node
 
 var globalTileMap
 
+var stage_1 = "res://scenes/world/stage_1.tscn"
+var stage_2 = "res://scenes/world/stage_2.tscn"
+
 var playerHealth = 100
 var playerAmmo
 var playerBattery
 var playerSpeed
 
+var allowRs : bool = false
 var allowInput = true
 var researchPoint = 0
 var soldierPoint = 0

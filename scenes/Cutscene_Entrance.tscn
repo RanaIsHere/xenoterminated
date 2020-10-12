@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://tiles/world/stage_1/background/planet.png" type="Texture" id=1]
+[ext_resource path="res://tiles/world/stage_1/background/planet-2.png" type="Texture" id=1]
 [ext_resource path="res://tiles/world/stage_1/background/ship.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Cutscene_Entrance.gd" type="Script" id=3]
 [ext_resource path="res://sprite/object/AmmoBox.png" type="Texture" id=4]
@@ -44,19 +44,18 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="PanoramaSky" id=11]
+[sub_resource type="PanoramaSky" id=8]
 panorama = ExtResource( 5 )
 
-[sub_resource type="Environment" id=8]
+[sub_resource type="Environment" id=9]
 background_mode = 2
-background_sky = SubResource( 11 )
+background_sky = SubResource( 8 )
 glow_enabled = true
 glow_strength = 1.51
 glow_bloom = 0.01
 glow_blend_mode = 0
 
-[sub_resource type="Animation" id=9]
-resource_name = "Cutscene_Entrance"
+[sub_resource type="Animation" id=10]
 length = 14.0
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Ship")
@@ -90,8 +89,7 @@ tracks/2/keys = {
 "values": [ 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "Transition"
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:opacity")
 tracks/0/interp = 1
@@ -116,21 +114,21 @@ texture = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.86154, 0 )
 opacity = 0.842105
 frames = SubResource( 7 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 8 )
+environment = SubResource( 9 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.875245, 0, 0.48368, 0, 1, 0, -0.48368, 0, 0.875245, 1.59781, 3.02899, 2.29281 )
 current = true
 
 [node name="CutscenePlayer" type="AnimationPlayer" parent="."]
-anims/Cutscene_Entrance = SubResource( 9 )
+anims/Cutscene_Entrance = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Transition = SubResource( 10 )
+anims/Transition = SubResource( 11 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 48.3557, 0, 0, 0, 91.4026, 0, 0, 0, 1, 0, 0.593294, 0.935964 )

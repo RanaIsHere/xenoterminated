@@ -3,6 +3,13 @@ extends Node2D
 var dcShot = 0
 var exShot = 0
 
+onready var curbat = $Player.MAXBATT
+
+var warnAlert = preload("res://scenes/WarnAlert.tscn").instance()
+
+#var playerSpawnPoint = $playerSpawn.position
+#var playerBossPoint = $BossStage_1.position
+
 
 func _ready():
 	OS.set_window_title("Xenoterminated - Alpha Cliff")
@@ -12,6 +19,11 @@ func _ready():
 	Globals.deathType = null
 	Globals.allowInput = true
 	Globals.globalTileMap = null
+	
+	$Player.position = $playerSpawn.position
+	
+	print (curbat)
+	print(get_tree().get_nodes_in_group("enemies").size())
 	
 func _process(_delta):	
 	var tileMap = $theCliffsground.world_to_map($Player.position)
@@ -67,3 +79,29 @@ func waitTimeBreak(var tileMap):
 	yield(get_tree().create_timer(0.2), "timeout")
 	
 	$theCliffsground.set_cellv(tileMap, -1)
+
+
+func _on_moveTo_1_body_entered(body):
+	if body.name == "Player":
+		if Globals.researchPoint == 36 or Globals.researchPoint >= 36 or Globals.soldierPoint == 36 or Globals.soldierPoint >= 36:
+			body.position = $BossStage_1.position
+			
+			body.MAXBATT = 120
+			Globals.playerBattery = body.MAXBATT
+			Globals.allowRs = true
+		else:
+			$GUI.add_child(warnAlert)
+
+
+func _on_moveTo_2_body_entered(body):
+	if body.name == "Player":
+		body.position = $playerSpawn.position
+		body.MAXBATT = curbat
+		Globals.playerBattery = body.MAXBATT
+		Globals.allowRs = false
+		
+
+
+func _on_moveTo_1_body_exited(body):
+	if body.name == "Player":
+		$GUI.remove_child(warnAlert)
