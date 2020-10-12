@@ -33,6 +33,8 @@ func _on_bullet_body_entered(body):
 			body.health = 0
 			Globals.bossHealth = body.health
 			
+			get_tree().change_scene("res://scenes/MoveBetweenScene.tscn")
+			
 			queue_free()
 			body.queue_free()
 			

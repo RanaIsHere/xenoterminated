@@ -72,11 +72,11 @@ func get_input():
 		velocity.x -= 1
 		walk()
 	if velocity == Vector2.ZERO:
-		if Globals.researchPoint == 0:
+		if Globals.researchPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("shoot") and allowShot == 0 and Globals.playerAmmo != 0:
 				shoot()
 		
-		if Globals.soldierPoint == 0:
+		if Globals.soldierPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("observe"):
 				observe()
 			
