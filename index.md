@@ -27,14 +27,14 @@
     
     <a href="https://github.com/RanaIsHere/xenoterminated/releases"> Releases </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-3.0/Xenoterminated_0_3_0_x64.exe"> Windows 64bit </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x64.exe"> Windows 64bit </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-3.0/Xenoterminated_0_3_0_x32.exe"> Windows 32bit </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x32.exe"> Windows 32bit </a>
     <br>
     
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-3.0/Xenoterminated_0_3_0_x64.x86_64"> Linux 64bit [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x64.x86_64"> Linux 64bit [UNTESTED] </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-3.0/Xenoterminated_0_3_0_x32.x86"> Linux 32bit [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x32.x86"> Linux 32bit [UNTESTED] </a>
     <br>
     
     <a href="sirrana.itch.io/xenoterminated"> View Itch.io page </a>
