@@ -4,6 +4,8 @@ var enemySpeed = 80
 
 export var health = 1
 
+export var researchLimit = 1
+
 var colliders
 
 func _ready():
@@ -26,7 +28,7 @@ func _on_detectionRadius_body_entered(body):
 	if body.name == "Player":
 		set_physics_process(true)
 		colliders = body
-
+		$AudioStreamPlayer2D.playing = true
 
 func _on_Hobrun_body_entered(body):
 	if body.name == "Player":

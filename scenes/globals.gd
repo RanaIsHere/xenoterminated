@@ -2,8 +2,11 @@ extends Node
 
 var globalTileMap
 
+var nextStage : String
 var stage_1 = "res://scenes/world/stage_1.tscn"
 var stage_2 = "res://scenes/world/stage_2.tscn"
+var stage_3 = "empty"
+
 
 var playerHealth = 100
 var playerAmmo

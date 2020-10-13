@@ -7,6 +7,8 @@ var max_t : float = 1.5 #fire rate
 
 var oneShot = 0
 
+export var researchLimit = 1
+
 export var health = 2
 
 export var collided : Array

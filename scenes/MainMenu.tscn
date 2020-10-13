@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://tiles/world/stage_1/background/space_front.png" type="Texture" id=1]
 [ext_resource path="res://font/Silver.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://tiles/world/stage_1/background/planet-2.png" type="Texture" id=3]
 [ext_resource path="res://tiles/world/stage_1/background/ship.png" type="Texture" id=4]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://music/mainMenu.wav" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 19
@@ -94,7 +95,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 702.487, 287.434 )
 frames = SubResource( 7 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="title" type="Label" parent="."]
@@ -122,7 +123,8 @@ margin_bottom = 88.3137
 custom_fonts/font = SubResource( 9 )
 text = "Version: 0.3.5
 Made by Rana Rosihan
-Font by Poppy Works"
+Font by Poppy Works
+"
 align = 1
 valign = 1
 __meta__ = {
@@ -268,11 +270,11 @@ margin_top = -185.095
 margin_right = -367.936
 margin_bottom = -108.095
 custom_fonts/font = SubResource( 9 )
-text = "How to Play:
+text = "How to Play (There are different gameplays. (Bullet Hell, Platformer..)):
 At first, you have two choice. Kill or Observe the species on the planet, whether hostile or not.
 When you've already killed, then you cannot observe anymore.
 When you've already observed, then you cannot kill anymore.
-- Mouse Left Click - Observe (Move your mouse to aim)
+- Keyboard Button 'Space'  - Observe (Move your mouse to aim)
 - Keyboard Button 'E' - Shoot (Kill) (Move your mouse to aim)
 You cannot shoot/observe when you are moving/walking!
 There are two endings to this game, complete all stages successfully by killing/observing all creature!
@@ -283,6 +285,10 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 [connection signal="gui_input" from="Start" to="." method="_on_Start_gui_input"]
 [connection signal="gui_input" from="Instruction" to="." method="_on_Instruction_gui_input"]
 [connection signal="gui_input" from="Exit" to="." method="_on_Exit_gui_input"]

@@ -8,6 +8,8 @@ export var timeMax2 : float = 10.0 # Pong Second
 
 export var health = 2
 
+export var researchLimit = 1
+
 func _ready():
 	set_process(false)
 	

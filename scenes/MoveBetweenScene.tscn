@@ -92,7 +92,7 @@ far = 8192.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0348358, -0.00688171, -1.70869 )
 billboard = 1
 frames = SubResource( 9 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera/AnimatedSprite3D"]

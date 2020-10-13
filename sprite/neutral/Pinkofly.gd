@@ -7,6 +7,8 @@ export var birdSpeed = -200
 
 export var health = 1
 
+export var researchLimit = 1
+
 var pos
 
 func _ready():

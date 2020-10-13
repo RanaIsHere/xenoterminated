@@ -11,4 +11,4 @@ func mbs():
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene(Globals.stage_2)
+	get_tree().change_scene(Globals.nextStage)

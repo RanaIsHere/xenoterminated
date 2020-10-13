@@ -1,26 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://font/Silver.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/PlayerGUI.gd" type="Script" id=2]
 [ext_resource path="res://GUI/PlayerGUI_FONT_1.tres" type="DynamicFont" id=3]
 
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=1]
 size = 32
-outline_size = 2
-outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
 outline_size = 2
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 2
 outline_color = Color( 0, 0.443137, 1, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 2
+outline_color = Color( 0.133333, 0.698039, 0.27451, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Environment" id=4]
 glow_enabled = true
 glow_blend_mode = 0
 glow_bicubic_upscale = true
@@ -69,7 +75,7 @@ margin_left = -65.8726
 margin_top = -18.5
 margin_right = 66.1274
 margin_bottom = 18.5
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Battery:: NULL"
 align = 1
 valign = 1
@@ -101,7 +107,7 @@ margin_left = -60.7887
 margin_top = -18.5
 margin_right = -20.7887
 margin_bottom = 18.5
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "NULL"
 align = 1
 valign = 1
@@ -118,7 +124,24 @@ margin_left = -112.445
 margin_top = -18.5
 margin_right = -72.4454
 margin_bottom = 18.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "NULL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossPoint" type="Label" parent="Panel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -163.445
+margin_top = -18.5
+margin_right = -123.445
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 5 )
 text = "NULL"
 align = 1
 valign = 1
@@ -127,4 +150,4 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 4 )

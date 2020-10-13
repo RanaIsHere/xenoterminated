@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://sprite/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/world/stage_1/background/the_cliffs_stage_1.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://sprite/object/HealthBox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://sprite/boss/HobrunOmega.tscn" type="PackedScene" id=16]
 [ext_resource path="res://DeathExplosion.tscn" type="PackedScene" id=17]
+[ext_resource path="res://sounds/HalfWind.wav" type="AudioStream" id=18]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -133,7 +134,7 @@ MAXBATT = 40
 position = Vector2( -2343.64, -1130.73 )
 
 [node name="playerSpawn" type="Position2D" parent="."]
-position = Vector2( 478.361, 350.906 )
+position = Vector2( 462.444, 335.684 )
 
 [node name="theCliffsground" type="TileMap" parent="."]
 z_index = -1
@@ -453,7 +454,6 @@ ammunition = 10
 [node name="AmmoBox3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 617.511, 1303.81 )
 z_index = -1
-ammunition = 3
 
 [node name="HobrunOmega" parent="." groups=[
 "boss",
@@ -482,6 +482,14 @@ __meta__ = {
 
 [node name="detectionRad" type="CollisionShape2D" parent="moveTo_2"]
 shape = SubResource( 8 )
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 273.341, 322.077 )
+stream = ExtResource( 18 )
+volume_db = 10.297
+autoplay = true
+max_distance = 400.0
+attenuation = 0.241484
 [connection signal="body_entered" from="moveTo_1" to="." method="_on_moveTo_1_body_entered"]
 [connection signal="body_exited" from="moveTo_1" to="." method="_on_moveTo_1_body_exited"]
 [connection signal="body_entered" from="moveTo_2" to="." method="_on_moveTo_2_body_entered"]

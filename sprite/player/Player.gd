@@ -14,6 +14,8 @@ onready var playerAnimated = $AnimatedSprite
 export (PackedScene) var bullet = preload("res://sprite/player/bullet.tscn")
 export (PackedScene) var scanArea = preload("res://sprite/player/ScanArea.tscn")
 
+export (PackedScene) var pauseScene = preload("res://GUI/PauseScreen.tscn")
+
 func _ready():
 	playerAnimated.connect("animation_finished", self, "idle")
 	
@@ -27,9 +29,9 @@ func _ready():
 
 func observe():
 	var s_a = scanArea.instance()
-	
+		
 	owner.add_child(s_a)
-	s_a.translate(get_global_mouse_position())
+	s_a.transform = $gun.global_transform
 	Globals.playerBattery -= 1
 
 func shoot():
@@ -56,6 +58,11 @@ func idle():
 	else:
 		playerAnimated.animation = "idle"
 
+func pause():
+	var p = pauseScene.instance()
+	
+	owner.get_node("GUI").add_child(p)
+
 func get_input():
 	velocity = Vector2.ZERO
 
@@ -71,7 +78,10 @@ func get_input():
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1
 		walk()
+	if Input.is_action_just_pressed("pause"):
+		pause()
 	if velocity == Vector2.ZERO:
+		$Walk.playing = false
 		if Globals.researchPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("shoot") and allowShot == 0 and Globals.playerAmmo != 0:
 				shoot()
@@ -79,6 +89,9 @@ func get_input():
 		if Globals.soldierPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("observe"):
 				observe()
+	else:
+		if $Walk.playing == false:
+			$Walk.playing = true	
 			
 
 	velocity = velocity.normalized() * Globals.playerSpeed
