@@ -9,7 +9,7 @@
 
         <div style="background-color: rgb(93, 11, 122); color: white;"> 
             <h3> Genre: </h3>
-            <p> Top-down shooter with two endings </p>
+            <p> Mixed game shooter (top-down, bullet-hell, 3D game) with two endings </p>
         </div>
         
         <div style="background-color: rgb(11, 8, 77); color: white;"> 
@@ -27,14 +27,12 @@
     
     <a href="https://github.com/RanaIsHere/xenoterminated/releases"> Releases </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x64.exe"> Windows 64bit </a>
-    <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x32.exe"> Windows 32bit </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/windows-32-64.zip"> Windows 64bit and 32bit Zipped </a>
     <br>
     
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x64.x86_64"> Linux 64bit [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/linux-32-64.zip"> Linux 64bit and 32bit [UNTESTED] </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/dev-0-4.0/Xenoterminated_0_4_0_x32.x86"> Linux 32bit [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/mac-zipped-file.zip"> Mac OSX Zipped File [UNTESTED] </a>
     <br>
     
     <a href="sirrana.itch.io/xenoterminated"> View Itch.io page </a>
