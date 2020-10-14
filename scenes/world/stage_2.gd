@@ -4,6 +4,7 @@ export var c_t = 0.0
 export var max_t = 1.0
 var oneShot = 0
 
+var oneC = 0
 var dcShot = 0
 var exShot = 0
 
@@ -19,6 +20,8 @@ var pinkofly = preload("res://sprite/player/bullet_hell/BH_Pinkofly.tscn")
 var nervesap = preload("res://sprite/enemy/bullet_hell/Nervesap.tscn")
 var sakutrap = preload("res://sprite/enemy/bullet_hell/Sakutrap.tscn")
 
+export (PackedScene) var warn = preload("res://GUI/WarnStage_2.tscn").instance()
+
 #var playerSpawnPoint = $playerSpawn.position
 #var playerBossPoint = $BossStage_1.position
 
@@ -31,6 +34,8 @@ func _ready():
 	Globals.deathType = null
 	Globals.allowInput = true
 	Globals.globalTileMap = null
+	
+	Input.set_mouse_mode(!Input.MOUSE_MODE_CAPTURED)
 	
 	$Ship.position = $playerSpawn.position
 
@@ -108,6 +113,7 @@ func pinkoflies(var limit):
 				$EnemySpawn_8.rotation_degrees += i
 				p_f.rotation_degrees = $EnemySpawn_1.rotation_degrees
 		#print(p_f.position)
+		p_f = null
 
 func nervesapper(var limit):
 	if get_tree().get_nodes_in_group("enemies").size() < limit:
@@ -153,6 +159,7 @@ func nervesapper(var limit):
 				p_f.duplicate()
 				p_f.position = $EnemySpawn_8.position
 				p_f.add_to_group("enemies")
+		p_f = null
 
 func boss_sakutrap(var limit):
 	if get_tree().get_nodes_in_group("boss").size() < limit:
@@ -164,6 +171,7 @@ func boss_sakutrap(var limit):
 			add_child(st)
 			st.add_to_group("boss")
 			st.position = $BossStage_2.position
+		st = null
 		
 func _process(delta):	
 	$ParallaxBackground.scroll_offset.y += 10 * delta
@@ -195,7 +203,7 @@ func _process(delta):
 	#	get_tree().change_scene("res://scenes/deathScene_fall.tscn")
 	
 	if shooting_type == "normal":
-		max_t = 10.0
+		max_t = 15.0
 	elif shooting_type == "normal_2":
 		max_t = 5.0
 	elif shooting_type == "aim_shoot":
@@ -250,13 +258,13 @@ func _process(delta):
 		dcShot = 1
 		Globals.allowInput = false
 		$Ship.queue_free()
-		get_tree().change_scene(Globals.stage_2)
+		get_tree().change_scene("res://scenes/Cutscene_Death_Ship.tscn")
 		#get_tree().change_scene("res://scenes/deathScene_1.tscn")
 	if Globals.playerHealth < 0 or Globals.playerHealth == 0 and dcShot == 0 and Globals.deathType == "trampled":
 		dcShot = 1
 		Globals.allowInput = false
 		$Ship.queue_free()
-		get_tree().change_scene(Globals.stage_2)
+		get_tree().change_scene("res://scenes/Cutscene_Death_Ship.tscn")
 		#get_tree().change_scene("res://scenes/deathScene_trampled.tscn")
 	if Globals.bossHealth == 0 or Globals.bossHealth < 0 and exShot == 0:
 			exShot += 1
@@ -270,11 +278,20 @@ func _process(delta):
 	
 	match shooting_type:
 		"normal":
-			print("none yet")
+			#print("none yet")
+			if oneC == 0:
+				oneC += 1
+				$GUI.add_child(warn)
+				
 		"normal_2":
-			print("none yet")
+			return
 		"aim_shoot":
 			pinkoflies(4)
+			
+			if oneC == 1:
+				oneC = -1
+				$GUI.remove_child(warn)
+			
 			#print(randSpawn)
 		"straight_lines":
 			nervesapper(200)
@@ -305,7 +322,7 @@ func _process(delta):
 			boss_sakutrap(1)
 			c_t = 0.0
 			
-	print("ShootingNum: " + str(shootingNum))
+	#print("ShootingNum: " + str(shootingNum))
 	
 	if Globals.soldierPoint == 1 and Globals.researchPoint == 1:
 		get_tree().change_scene(Globals.stage_2)

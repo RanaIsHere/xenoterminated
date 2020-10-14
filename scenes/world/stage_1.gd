@@ -20,6 +20,8 @@ func _ready():
 	Globals.allowInput = true
 	Globals.globalTileMap = null
 	
+	Input.set_mouse_mode(!Input.MOUSE_MODE_CAPTURED)
+	
 	$Player.position = $playerSpawn.position
 	
 	print (curbat)

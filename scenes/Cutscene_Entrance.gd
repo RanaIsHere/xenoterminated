@@ -11,6 +11,7 @@ func _wait():
 	yield($AnimationPlayer, "animation_finished")
 	
 	$CutscenePlayer.play("Cutscene_Entrance")
+	$Player.playing = true
 
 func _on_CutscenePlayer_animation_finished(anim_name):
 	if anim_name == "Cutscene_Entrance":
@@ -22,3 +23,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	if anim_name == "Transition" and oneShot == 2:
 		get_tree().change_scene("res://scenes/world/stage_1.tscn")
+
+
+func _on_Player_finished():
+	$Commander.playing = true

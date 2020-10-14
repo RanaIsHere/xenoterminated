@@ -46,10 +46,10 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=10]
 radius = 21.8196
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="CircleShape2D" id=11]
 radius = 22.0096
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 2048, 2048 )
 
 [node name="Sakutrap" type="KinematicBody2D"]
@@ -58,9 +58,14 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.5708
 frames = SubResource( 9 )
+frame = 7
 playing = true
 
 [node name="Beak" type="Position2D" parent="AnimatedSprite"]
+position = Vector2( -0.415914, -29.0656 )
+rotation = -1.5708
+
+[node name="Beak2" type="Position2D" parent="AnimatedSprite"]
 position = Vector2( -0.415914, -29.0656 )
 rotation = -1.5708
 
@@ -70,13 +75,13 @@ shape = SubResource( 10 )
 [node name="HurtDetection" type="Area2D" parent="."]
 
 [node name="Radius" type="CollisionShape2D" parent="HurtDetection"]
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="AreaDetection" type="Area2D" parent="."]
 visible = false
 
 [node name="AreaRadius" type="CollisionShape2D" parent="AreaDetection"]
 visible = false
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 [connection signal="body_entered" from="HurtDetection" to="." method="_on_HurtDetection_body_entered"]
 [connection signal="body_entered" from="AreaDetection" to="." method="_on_AreaDetection_body_entered"]

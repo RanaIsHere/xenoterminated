@@ -4,6 +4,7 @@ export (PackedScene) var resMenu = preload("res://GUI/ResearchMenu.tscn")
 
 func _ready():
 	get_tree().paused = true
+	Input.set_mouse_mode(!Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_Resume_gui_input(event):

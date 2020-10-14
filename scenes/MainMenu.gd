@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	OS.set_window_title("Xenoterminated - Main Menu")
+	Input.set_mouse_mode(!Input.MOUSE_MODE_CAPTURED)
 	_wait()
 
 func _wait():
@@ -32,6 +33,7 @@ func _on_Instruction_gui_input(event):
 		if event.pressed:
 			$Start.visible = false
 			$Instruction.visible = false
+			$Credits.visible = false
 			$Exit.visible = false
 			$Back.visible = true
 	
@@ -43,7 +45,22 @@ func _on_Back_gui_input(event):
 		if event.pressed:
 			$Start.visible = true
 			$Instruction.visible = true
+			$Credits.visible = true
 			$Exit.visible = true
 			$Back.visible = false
 	
 			$InstructionText.visible = false
+			$CreditsText.visible = false
+
+
+func _on_Credits_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			$Start.visible = false
+			$Instruction.visible = false
+			$Credits.visible = false
+			$Exit.visible = false
+			
+			$Back.visible = true
+			$CreditsText.visible = true
+			

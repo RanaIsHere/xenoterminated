@@ -95,7 +95,7 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 702.487, 287.434 )
 frames = SubResource( 7 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="title" type="Label" parent="."]
@@ -121,7 +121,7 @@ margin_top = 11.3137
 margin_right = -7.63318
 margin_bottom = 88.3137
 custom_fonts/font = SubResource( 9 )
-text = "Version: 0.3.5
+text = "Version: 0.5.0
 Made by Rana Rosihan
 Font by Poppy Works
 "
@@ -190,10 +190,10 @@ __meta__ = {
 [node name="Exit" type="Panel" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 32.5637
-margin_top = 126.905
-margin_right = 203.564
-margin_bottom = 181.905
+margin_left = 34.1511
+margin_top = 180.083
+margin_right = 205.151
+margin_bottom = 235.083
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -209,6 +209,34 @@ margin_right = 53.0
 margin_bottom = 18.5
 custom_fonts/font = SubResource( 9 )
 text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Panel" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.5637
+margin_top = 115.793
+margin_right = 203.564
+margin_bottom = 170.793
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="creditLabel" type="Label" parent="Credits"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -18.5
+margin_right = 53.0
+margin_bottom = 18.5
+custom_fonts/font = SubResource( 9 )
+text = "Credits"
 align = 1
 valign = 1
 __meta__ = {
@@ -286,10 +314,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CreditsText" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -480.768
+margin_top = -185.095
+margin_right = 2.23236
+margin_bottom = 171.905
+custom_fonts/font = SubResource( 9 )
+text = "Credits:
+Tools used:
+	Godot, Spacescape, Bfxr, Audacity, Aseprite, Piskel, Bosca Ceoil
+Sounds and Art made by:
+	Rana Rosihan (SirRana)
+Font [Silver] by:
+Poppy Works on Itch.io
+Music:
+	1. Termination Repeat - Main Menu
+
+"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 [connection signal="gui_input" from="Start" to="." method="_on_Start_gui_input"]
 [connection signal="gui_input" from="Instruction" to="." method="_on_Instruction_gui_input"]
 [connection signal="gui_input" from="Exit" to="." method="_on_Exit_gui_input"]
+[connection signal="gui_input" from="Credits" to="." method="_on_Credits_gui_input"]
 [connection signal="gui_input" from="Back" to="." method="_on_Back_gui_input"]

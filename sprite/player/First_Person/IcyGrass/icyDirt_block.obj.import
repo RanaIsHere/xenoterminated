@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/icyDirt_block.obj-c4dd8b9d551aa3a12fe5ba5554ed4c73.mesh"
+
+[deps]
+
+files=[ "res://.import/icyDirt_block.obj-c4dd8b9d551aa3a12fe5ba5554ed4c73.mesh" ]
+
+source_file="res://sprite/player/First_Person/IcyGrass/icyDirt_block.obj"
+dest_files=[ "res://.import/icyDirt_block.obj-c4dd8b9d551aa3a12fe5ba5554ed4c73.mesh", "res://.import/icyDirt_block.obj-c4dd8b9d551aa3a12fe5ba5554ed4c73.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
