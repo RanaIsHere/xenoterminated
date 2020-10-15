@@ -24,6 +24,7 @@
         </div>
     </div>
     
+    <div style="background-color: violet; color: white">
     
     <a href="https://github.com/RanaIsHere/xenoterminated/releases"> Releases </a>
     <br>
@@ -34,6 +35,8 @@
     <br>
     <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/mac-zipped-file.zip"> Mac OSX Zipped File [UNTESTED] </a>
     <br>
+
+    </div>
     
     <a href="sirrana.itch.io/xenoterminated"> View Itch.io page </a>
 </body>
