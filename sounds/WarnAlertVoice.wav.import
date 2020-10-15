@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WarnAlertVoice.wav-49f6ffe2895b18f2ba0273e6bddf1664.sample"
+
+[deps]
+
+source_file="res://sounds/WarnAlertVoice.wav"
+dest_files=[ "res://.import/WarnAlertVoice.wav-49f6ffe2895b18f2ba0273e6bddf1664.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

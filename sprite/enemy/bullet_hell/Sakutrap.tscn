@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprite/enemy/bullet_hell/boss_sakutrap.png" type="Texture" id=1]
 [ext_resource path="res://sprite/enemy/bullet_hell/Sakutrap.gd" type="Script" id=2]
+[ext_resource path="res://sounds/LightningEX.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -58,7 +59,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.5708
 frames = SubResource( 9 )
-frame = 7
+frame = 6
 playing = true
 
 [node name="Beak" type="Position2D" parent="AnimatedSprite"]
@@ -83,5 +84,9 @@ visible = false
 [node name="AreaRadius" type="CollisionShape2D" parent="AreaDetection"]
 visible = false
 shape = SubResource( 12 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 [connection signal="body_entered" from="HurtDetection" to="." method="_on_HurtDetection_body_entered"]
 [connection signal="body_entered" from="AreaDetection" to="." method="_on_AreaDetection_body_entered"]

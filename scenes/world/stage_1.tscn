@@ -134,7 +134,7 @@ MAXBATT = 40
 position = Vector2( -2343.64, -1130.73 )
 
 [node name="playerSpawn" type="Position2D" parent="."]
-position = Vector2( 462.444, 335.684 )
+position = Vector2( 448.257, 325.853 )
 
 [node name="theCliffsground" type="TileMap" parent="."]
 z_index = -1

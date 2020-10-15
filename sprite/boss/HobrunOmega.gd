@@ -23,6 +23,7 @@ func shoot( var delta ):
 	var p_h = Projectile.instance()
 	p_h.texture = HobrunProj
 	p_h.projectileDamage = 10
+	p_h.get_node("AudioStreamPlayer2D").autoplay = true
 	
 	if colliders != null:
 		if shootingType == 0: #circular shot

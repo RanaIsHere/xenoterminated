@@ -11,6 +11,7 @@ var colliders
 func _ready():
 	set_physics_process(false)
 	set_process(false)
+	$AnimationPlayer.play("opacityBlink")
 	colliders = null
 
 func _physics_process(delta):

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PlasmaSound.wav-6c545a9d5fa091f596d6b9960ae25f4e.sample"
+
+[deps]
+
+source_file="res://sounds/PlasmaSound.wav"
+dest_files=[ "res://.import/PlasmaSound.wav-6c545a9d5fa091f596d6b9960ae25f4e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

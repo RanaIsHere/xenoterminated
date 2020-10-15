@@ -29,7 +29,7 @@ func shoot():
 		$Spatial/Muzzle/AudioStreamPlayer3D.playing = true
 		
 		if $Spatial/Muzzle/RayCast.is_colliding():
-			print('hit')
+			pass
 		
 		#var b = bullet.instance()
 			

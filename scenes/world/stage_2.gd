@@ -22,6 +22,7 @@ var sakutrap = preload("res://sprite/enemy/bullet_hell/Sakutrap.tscn")
 
 export (PackedScene) var warn = preload("res://GUI/WarnStage_2.tscn").instance()
 
+
 #var playerSpawnPoint = $playerSpawn.position
 #var playerBossPoint = $BossStage_1.position
 
@@ -229,6 +230,7 @@ func _process(delta):
 	if c_t > max_t:
 		c_t = 0.0
 		shootingNum += 1
+		
 		
 	match shootingNum:
 		0:
