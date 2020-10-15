@@ -24,7 +24,7 @@
         </div>
     </div>
     
-    <div style="background-color: violet; color: white">
+    <div style="background-color: violet; text-decoration: none; color: white">
     
     <a href="https://github.com/RanaIsHere/xenoterminated/releases"> Releases </a>
     <br>
