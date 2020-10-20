@@ -28,17 +28,17 @@
     
     <a href="https://github.com/RanaIsHere/xenoterminated/releases"> Releases </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/windows-32-64.zip"> Windows 64bit and 32bit Zipped </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0.5.5/Xenoterminated_0_5_5_Windows.zip"> Windows 64bit and 32bit Zipped </a>
     <br>
     
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/linux-32-64.zip"> Linux 64bit and 32bit [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0.5.5/Xenoterminated_0_5_5_Linux.zip"> Linux 64bit and 32bit [UNTESTED] </a>
     <br>
-    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0-5.0/mac-zipped-file.zip"> Mac OSX Zipped File [UNTESTED] </a>
+    <a href="https://github.com/RanaIsHere/xenoterminated/releases/download/alpha-0.5.5/Xenoterminated-v-0.5.5_MAC_OSX.zip"> Mac OSX Zipped File [UNTESTED] </a>
     <br>
 
     </div>
     
-    <a href="sirrana.itch.io/xenoterminated"> View Itch.io page </a>
+    <a href="https://sirrana.itch.io/xenoterminated"> View Itch.io page </a>
 </body>
 
 </html>
