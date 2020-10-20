@@ -36,6 +36,9 @@ func _ready():
 	Globals.allowInput = true
 	Globals.globalTileMap = null
 	
+	Globals.soldierPoint = Globals.stage_1_sol
+	Globals.researchPoint = Globals.stage_1_res
+	
 	Input.set_mouse_mode(!Input.MOUSE_MODE_CAPTURED)
 	
 	$Ship.position = $playerSpawn.position
@@ -273,7 +276,10 @@ func _process(delta):
 			$DeathExplosion.emitting = true
 			if exShot > 30:
 				$DeathExplosion.emitting = false
-				Globals.nextStage = Globals.stage_3
+				if Globals.stage_1_sol != 0:
+					Globals.nextStage = Globals.ending_1
+				elif Globals.stage_1_res != 0:
+					Globals.nextStage = Globals.ending_1
 				get_tree().change_scene("res://scenes/MoveBetweenScene.tscn")
 				Globals.bossHealth = 100
 				exShot = 0

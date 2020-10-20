@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WaterDroplet.wav-4b7b32df83301e25fe3f74e5e34a08d1.sample"
+
+[deps]
+
+source_file="res://sounds/WaterDroplet.wav"
+dest_files=[ "res://.import/WaterDroplet.wav-4b7b32df83301e25fe3f74e5e34a08d1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

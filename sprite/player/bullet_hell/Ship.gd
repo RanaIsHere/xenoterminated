@@ -26,6 +26,9 @@ func _ready():
 	
 	Globals.researchPoint = 0
 	Globals.soldierPoint = 0
+	
+	Globals.researchPoint = Globals.stage_1_res
+	Globals.soldierPoint = Globals.stage_1_sol
 
 func observe():
 	var s_a = scanArea.instance()

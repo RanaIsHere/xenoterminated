@@ -69,6 +69,10 @@ func _process(_delta):
 			$DeathExplosion.emitting = true
 			if exShot > 30:
 				$DeathExplosion.emitting = false
+				
+				Globals.stage_1_res = Globals.researchPoint
+				Globals.stage_1_sol = Globals.soldierPoint
+				
 				Globals.nextStage = Globals.stage_2
 				get_tree().change_scene("res://scenes/MoveBetweenScene.tscn")
 				Globals.bossHealth = 100

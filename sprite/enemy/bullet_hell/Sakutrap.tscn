@@ -59,7 +59,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 1.5708
 frames = SubResource( 9 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="Beak" type="Position2D" parent="AnimatedSprite"]

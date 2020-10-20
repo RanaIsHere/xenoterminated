@@ -7,6 +7,12 @@ var stage_1 = "res://scenes/world/stage_1.tscn"
 var stage_2 = "res://scenes/world/stage_2.tscn"
 var stage_3 = "res://scenes/world/stage_3.tscn"
 
+var ending_1 = "res://GUI/TextInterface_Ending_1.tscn"
+var ending_2
+
+var stage_1_res : int = 0
+var stage_1_sol : int = 0
+
 
 var playerHealth = 100
 var playerAmmo
