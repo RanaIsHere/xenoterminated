@@ -3,6 +3,7 @@ extends Area2D
 var bulletSpeed = 600
 
 var explode = preload("res://DeathExplosion.tscn")
+var damage = preload("res://scenes/DamageCounter.tscn").instance()
 
 func _ready():
 	pass
@@ -27,6 +28,9 @@ func _on_bullet_body_entered(body):
 	if body.is_in_group("boss"):
 		body.health -= 1
 		print(body.health)
+		
+		body.add_child(damage)
+		
 		queue_free()
 		
 		if body.health == 0 or body.health < 0 or body.health <= 0:

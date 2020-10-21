@@ -3,9 +3,12 @@ extends Node2D
 var dcShot = 0
 var exShot = 0
 
+var flashShot = 0
+
 onready var curbat = $Player.MAXBATT
 
 var warnAlert = preload("res://scenes/WarnAlert.tscn").instance()
+var flashAlert = preload("res://scenes/SceneFlash.tscn").instance()
 
 #var playerSpawnPoint = $playerSpawn.position
 #var playerBossPoint = $BossStage_1.position
@@ -44,7 +47,7 @@ func _process(_delta):
 			print("non")
 	
 	if indexTile == 4:
-		Globals.playerSpeed = 150
+		Globals.playerSpeed = 100
 	else:
 		Globals.playerSpeed = 200
 
@@ -80,6 +83,16 @@ func _process(_delta):
 	
 	if Globals.soldierPoint == 1 and Globals.researchPoint == 1:
 		get_tree().change_scene(Globals.stage_1)
+	
+	if Globals.soldierPoint == 36 or Globals.researchPoint == 36:
+		if flashShot == 0:
+			$GUI.add_child(flashAlert)
+		
+		flashShot = 1
+	
+	if Globals.playerBattery == 0 or Globals.playerAmmo == 0:
+		get_tree().change_scene("res://scenes/world/stage_1.tscn")
+	
 	
 	#if Globals.playerHealth < 0 or Globals.playerHealth == 0 and dcShot == 0:
 	#	dcShot == 1

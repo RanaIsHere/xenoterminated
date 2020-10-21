@@ -39,9 +39,9 @@ func _on_Exit_mouse_exited():
 	$MainPanel/Exit.modulate = Color(1, 1, 1)
 
 
-func _on_Research_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.pressed:
-			var r = resMenu.instance()
-			
-			add_child(r)
+#func _on_Research_gui_input(event):
+#	if event is InputEventMouseButton:
+#		if event.pressed:
+#			var r = resMenu.instance()
+#			
+#			add_child(r)
