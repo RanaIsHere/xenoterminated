@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprite/player/Player.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://sounds/WalkSounds.wav" type="AudioStream" id=2]
@@ -7,6 +7,22 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ShakeCamera"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 3, 0 ), Vector2( -3, 0 ), Vector2( 0, 0 ) ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 4 )
@@ -38,3 +54,6 @@ pitch_scale = 0.5
 [node name="Walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -24.712
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ShakeCamera = SubResource( 2 )

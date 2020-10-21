@@ -200,3 +200,5 @@ position = Vector2( 295.532, -36.2762 )
 [node name="Wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]

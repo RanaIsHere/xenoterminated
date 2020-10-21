@@ -28,6 +28,7 @@ func _ready():
 	Globals.soldierPoint = 0
 
 func observe():
+	$AnimationPlayer.play("ShakeCamera")
 	var s_a = scanArea.instance()
 		
 	owner.add_child(s_a)
@@ -35,6 +36,7 @@ func observe():
 	Globals.playerBattery -= 1
 
 func shoot():
+	$AnimationPlayer.play("ShakeCamera")
 	var b_t = bullet.instance()
 	playerAnimated.animation = "shoot"
 	Globals.allowInput = false

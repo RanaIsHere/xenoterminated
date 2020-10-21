@@ -113,6 +113,9 @@ func _on_moveTo_1_body_entered(body):
 			body.MAXBATT = 120
 			Globals.playerBattery = body.MAXBATT
 			Globals.allowRs = true
+			
+			if $BossMusic.playing == false:
+				$BossMusic.playing = true
 		else:
 			$GUI.add_child(warnAlert)
 

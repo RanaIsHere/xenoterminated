@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprite/player/PlayerHurtParticle.tres" type="Material" id=1]
+[ext_resource path="res://sprite/player/HurtParticle.gd" type="Script" id=2]
+
+[node name="HurtParticle" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 1 )

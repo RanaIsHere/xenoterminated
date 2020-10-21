@@ -332,6 +332,10 @@ func _process(delta):
 			
 	#print("ShootingNum: " + str(shootingNum))
 	
+	if shootingNum == 10:
+		if $BossMusic.playing == false:
+			$BossMusic.playing = true
+	
 	if Globals.soldierPoint == 1 and Globals.researchPoint == 1:
 		get_tree().change_scene(Globals.stage_2)
 	#print(get_tree().get_nodes_in_group("enemies").size())

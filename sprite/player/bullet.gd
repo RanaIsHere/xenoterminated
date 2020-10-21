@@ -18,9 +18,12 @@ func _on_bullet_body_entered(body):
 		queue_free()
 	if body.is_in_group("enemies") or body.is_in_group("pinkofly"):
 		body.health -= 1
+		body.add_child(damage)
+		
 		queue_free()
-		if body.get_node_or_null("AudioStreamPlayer"):
-			body.get_node("AudioStreamPlayer").playing = true
+		#if body.get_node_or_null("AudioStreamPlayer"):
+		#	body.get_node("AudioStreamPlayer").playing = true
+		
 		if body.health == 0 or body.health < 0:
 			Globals.soldierPoint += 1
 			body.queue_free()

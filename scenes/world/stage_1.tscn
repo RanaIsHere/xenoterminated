@@ -509,6 +509,8 @@ position = Vector2( 2042.82, 349.625 )
 stream = ExtResource( 19 )
 autoplay = true
 max_distance = 600.0
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
 [connection signal="body_entered" from="moveTo_1" to="." method="_on_moveTo_1_body_entered"]
 [connection signal="body_exited" from="moveTo_1" to="." method="_on_moveTo_1_body_exited"]
 [connection signal="body_entered" from="moveTo_2" to="." method="_on_moveTo_2_body_entered"]

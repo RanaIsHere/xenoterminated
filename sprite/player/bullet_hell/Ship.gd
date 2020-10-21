@@ -16,6 +16,8 @@ export (PackedScene) var scanArea = preload("res://sprite/player/ScanArea.tscn")
 
 export (PackedScene) var pauseScene = preload("res://GUI/PauseScreen.tscn")
 
+var shakeScreen = preload("res://sprite/player/ShakeHit.tscn").instance()
+
 func _ready():
 	$Sprite.texture = idleTexture
 	
@@ -32,7 +34,9 @@ func _ready():
 
 func observe():
 	var s_a = scanArea.instance()
-		
+	
+	#owner.add_child(shakeScreen)
+	
 	owner.add_child(s_a)
 	s_a.transform = $gun.global_transform
 	Globals.playerBattery -= 1
