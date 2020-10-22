@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://sprite/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/world/stage_1/background/the_cliffs_stage_1.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://DeathExplosion.tscn" type="PackedScene" id=17]
 [ext_resource path="res://sounds/HalfWind.wav" type="AudioStream" id=18]
 [ext_resource path="res://sounds/WaterDroplet.wav" type="AudioStream" id=19]
+[ext_resource path="res://music/HobrunOmega.wav" type="AudioStream" id=20]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -511,6 +512,9 @@ autoplay = true
 max_distance = 600.0
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 20 )
+volume_db = 4.0
 [connection signal="body_entered" from="moveTo_1" to="." method="_on_moveTo_1_body_entered"]
 [connection signal="body_exited" from="moveTo_1" to="." method="_on_moveTo_1_body_exited"]
 [connection signal="body_entered" from="moveTo_2" to="." method="_on_moveTo_2_body_entered"]

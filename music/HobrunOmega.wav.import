@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HobrunOmega.wav-a2f20beb9e296568050314486ebfdb21.sample"
+
+[deps]
+
+source_file="res://music/HobrunOmega.wav"
+dest_files=[ "res://.import/HobrunOmega.wav-a2f20beb9e296568050314486ebfdb21.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

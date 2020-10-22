@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprite/player/bullet_hell/Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tiles/world/stage_2/background/bullet_hell_bg.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/world/stage_2.gd" type="Script" id=7]
 [ext_resource path="res://tiles/world/stage_1/WaterTexture.tres" type="Texture" id=8]
 [ext_resource path="res://sounds/HalfWind.wav" type="AudioStream" id=9]
+[ext_resource path="res://music/Sakutrap.wav" type="AudioStream" id=10]
 [ext_resource path="res://DeathExplosion.tscn" type="PackedScene" id=17]
 
 [sub_resource type="NavigationPolygon" id=1]
@@ -202,3 +203,6 @@ stream = ExtResource( 9 )
 autoplay = true
 
 [node name="BossMusic" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = 4.0

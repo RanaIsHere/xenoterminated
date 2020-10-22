@@ -121,7 +121,7 @@ margin_top = 11.3137
 margin_right = -7.63318
 margin_bottom = 88.3137
 custom_fonts/font = SubResource( 9 )
-text = "Version: 0.6.2
+text = "Version: 0.6.3
 Made by Rana Rosihan
 Font by Poppy Works
 "
@@ -330,12 +330,13 @@ Tools used:
 	Godot, Spacescape, Bfxr, Audacity, Aseprite, Piskel, Bosca Ceoil
 Sounds and Art made by:
 	Rana Rosihan (SirRana)
-Font [Silver] by:
-Poppy Works on Itch.io
+Font [Silver] by: Poppy Works on Itch.io
 Music:
 	1. Termination Repeat - Main Menu
 	2. Proud - End One
 	3. Remnant - End Two
+	4. Hobrun Omega - Stage 1 Boss Battle
+	5. Sakutrap - Stage 2 Boss Battle
 
 "
 valign = 1
