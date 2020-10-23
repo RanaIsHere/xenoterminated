@@ -121,7 +121,7 @@ margin_top = 11.3137
 margin_right = -7.63318
 margin_bottom = 88.3137
 custom_fonts/font = SubResource( 9 )
-text = "Version: 0.6.3
+text = "Version: 0.6.4
 Made by Rana Rosihan
 Font by Poppy Works
 "

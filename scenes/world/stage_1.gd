@@ -10,9 +10,6 @@ onready var curbat = $Player.MAXBATT
 var warnAlert = preload("res://scenes/WarnAlert.tscn").instance()
 var flashAlert = preload("res://scenes/SceneFlash.tscn").instance()
 
-#var playerSpawnPoint = $playerSpawn.position
-#var playerBossPoint = $BossStage_1.position
-
 
 func _ready():
 	OS.set_window_title("Xenoterminated - Alpha Cliff")
@@ -90,15 +87,11 @@ func _process(_delta):
 		
 		flashShot = 1
 	
-	if Globals.playerBattery == 0 or Globals.playerAmmo == 0:
-		get_tree().change_scene("res://scenes/world/stage_1.tscn")
-	
-	
-	#if Globals.playerHealth < 0 or Globals.playerHealth == 0 and dcShot == 0:
-	#	dcShot == 1
-	#	get_tree().change_scene()
-	#print(indexTile)
-
+	if Globals.playerBattery == 0:
+		get_tree().change_scene("res://GUI/OutOfBattery.tscn")
+	if Globals.playerAmmo == 0:
+		get_tree().change_scene("res://GUI/OutOfAmmo.tscn")
+		
 func waitTimeBreak(var tileMap):
 	yield(get_tree().create_timer(0.2), "timeout")
 	

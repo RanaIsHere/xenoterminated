@@ -22,11 +22,6 @@ var sakutrap = preload("res://sprite/enemy/bullet_hell/Sakutrap.tscn")
 
 export (PackedScene) var warn = preload("res://GUI/WarnStage_2.tscn").instance()
 
-
-#var playerSpawnPoint = $playerSpawn.position
-#var playerBossPoint = $BossStage_1.position
-
-
 func _ready():
 	OS.set_window_title("Xenoterminated - Alpha Cliff")
 	dcShot = 0
@@ -179,32 +174,6 @@ func boss_sakutrap(var limit):
 		
 func _process(delta):	
 	$ParallaxBackground.scroll_offset.y += 10 * delta
-	#var tileMap = $theCliffsground.world_to_map($Ship.position)
-	#var indexTile = $theCliffsground.get_cellv(Vector2(tileMap.x, tileMap.y))
-	#
-	#Globals.globalTileMap = tileMap
-	
-	#if indexTile == -1:
-	#	Globals.playerHealth = 0
-	#	Globals.deathType = "fall"
-	#	get_tree().change_scene("res://scenes/deathScene_fall.tscn")
-	#if indexTile == 3:
-	#	if waitTimeBreak(tileMap).is_valid():
-	#		print("valid")
-	#	else:
-	#		print("non")
-	#
-	#if indexTile == 4:
-	#	Globals.playerSpeed = 150
-	#else:
-	#	Globals.playerSpeed = 200
-
-	
-	#if Globals.playerHealth < 0 or Globals.playerHealth == 0 and dcShot == 0 and Globals.deathType == "fall":
-	#	dcShot = 1
-	#	Globals.allowInput = false
-	#	$Ship.queue_free()
-	#	get_tree().change_scene("res://scenes/deathScene_fall.tscn")
 	
 	if shooting_type == "normal":
 		max_t = 15.0
@@ -315,7 +284,7 @@ func _process(delta):
 			nervesapper(300)
 			pinkoflies(15)
 		"healing_stage":
-			Globals.playerHealth = 100
+			#Globals.playerHealth = 100
 			
 			var enemies = get_tree().get_nodes_in_group("enemies")
 			var pinko = get_tree().get_nodes_in_group("pinkofly")
@@ -330,21 +299,14 @@ func _process(delta):
 			boss_sakutrap(1)
 			c_t = 0.0
 			
-	#print("ShootingNum: " + str(shootingNum))
-	
+
 	if shootingNum == 10:
 		if $BossMusic.playing == false:
 			$BossMusic.playing = true
 	
 	if Globals.soldierPoint == 1 and Globals.researchPoint == 1:
 		get_tree().change_scene(Globals.stage_2)
-	#print(get_tree().get_nodes_in_group("enemies").size())
-	
-	#if Globals.playerHealth < 0 or Globals.playerHealth == 0 and dcShot == 0:
-	#	dcShot == 1
-	#	get_tree().change_scene()
-	#print(indexTile)
-
+		
 func waitTimeBreak(var tileMap):
 	yield(get_tree().create_timer(0.2), "timeout")
 	

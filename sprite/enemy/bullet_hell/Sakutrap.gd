@@ -17,6 +17,8 @@ export var max_st = 1.0 # max stage time
 
 var Current = 0.0
 
+var spin = 0
+
 var colliders
 
 func _ready():
@@ -39,6 +41,10 @@ func _physics_process(delta):
 				max_st = 2.0
 			5: # homing plasma
 				max_st = 10.0
+			6:
+				max_st = 5.0
+			7:
+				max_st = 8.0
 		
 		#oneShot = 0
 		if c_st < max_st: # tick to max stage time
@@ -48,16 +54,11 @@ func _physics_process(delta):
 			c_st = 0.0
 			stages += 1
 		
-		#if c_t < max_t:
-			#c_t += delta
-	
-		#if c_t > max_t and oneShot == 0:
-		#	c_t = 0.0
-			#oneShot = 1
 			# execute stages
 		if stages == 0: 
 			normalShoot(0.4, delta)
 		elif stages == 1:
+			#spinShoot(randi() % 20 + 19, 0.1, delta) # 20
 			spinShoot(20, 0.1, delta)
 		elif stages == 2:
 			normalShoot(0.4, delta)
@@ -71,6 +72,8 @@ func _physics_process(delta):
 		elif stages == 6:
 			normalShoot(0.2, delta)
 		elif stages == 7:
+			spinShoot(randi() % 20 + 15, 0.1, delta)
+		elif stages == 8:
 			stages = 0
 
 func spinShoot(var rotationRange, var MaxTime, var Delta):
@@ -111,8 +114,6 @@ func normalShoot(var MaxTime, var Delta):
 		p.transform = $AnimatedSprite/Beak.global_transform
 	
 		p = null
-	
-	#print(Current)
 
 func _on_HurtDetection_body_entered(body):
 	if body.is_in_group("invincible"):
