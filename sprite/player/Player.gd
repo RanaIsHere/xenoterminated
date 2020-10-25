@@ -86,7 +86,11 @@ func get_input():
 		$Walk.playing = false
 		if Globals.researchPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("shoot") and allowShot == 0 and Globals.playerAmmo != 0:
-				shoot()
+				if owner.get_node("GUI").get_node_or_null("PauseScreen"):
+					if owner.get_node("GUI").get_node("PauseScreen").is_processing_unhandled_input():
+						return
+				else:
+					shoot()
 		
 		if Globals.soldierPoint == 0 or Globals.allowRs == true:
 			if Input.is_action_just_pressed("observe"):
